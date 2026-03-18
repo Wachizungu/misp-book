@@ -1,19 +1,19 @@
 # Updating Python Dependencies
 
-MISP requires a couple of python libraries to be installed for the entire set of functionalities to work properly.
+MISP requires several Python libraries for its full feature set to work correctly.
 
-These functionalities include for instance the different import and export tools, the binaries extraction from attachments or PyMISP.
+These features include the import and export tools, binary extraction from attachments, and PyMISP.
 
 ------
 ## Installation
 
-We started using virtual environments in MISP to make the installation and maintenance of the python versions easier.
+MISP uses virtual environments to make Python installation and maintenance easier.
 
-Either using the [installation script](https://github.com/MISP/MISP/blob/2.4/INSTALL/INSTALL.sh) to setup a running MISP on your machine, or starting using the automatically generated [virtual machine](https://www.circl.lu/misp-images/latest/) will give you access to the latest version of the required python libraries installed within a virtual environment called `virtualenv`.
+If you use the [installation script](https://github.com/MISP/MISP/blob/2.4/INSTALL/INSTALL.sh) to set up MISP on your machine, or start from the automatically generated [virtual machine](https://www.circl.lu/misp-images/latest/), you already have the latest required Python libraries installed in a virtual environment.
 
-But if you are using an older MISP version, you may want to install the virtual environment
+If you are using an older MISP version, you may want to create the virtual environment manually.
 
-#### Set the virtual environment up
+#### Set Up the Virtual Environment
 ~~~~bash
 # Create a python3 virtualenv
 sudo -H -u www-data virtualenv -p python3 /var/www/MISP/venv
@@ -22,18 +22,18 @@ sudo -H -u www-data virtualenv -p python3 /var/www/MISP/venv
 sudo mkdir /var/www/.cache
 sudo chown www-data:www-data /var/www/.cache
 ~~~~
-If you already have a `venv` directory, you can skip this step
+If you already have a `venv` directory, you can skip this step.
 
 ------
 ## Updating MISP and its dependencies
 
-Keeping MISP up-to-date as much as possible is the safest way to avoid most of the potential issues.
+Keeping MISP as up to date as possible is the safest way to avoid most potential issues.
 
-It can be done either by using the Update button in the diagnostic tool available with the MISP UI, or by using the command line.
+You can do this either from the Update button in the diagnostic tool in the MISP UI or from the command line.
 
 ### Updating MISP core
 
-In order to update MISP dependencies, we first want to pull the latest MISP version, so we have the latest submodule references as well.
+To update MISP dependencies, first pull the latest MISP version so you also get the latest submodule references.
 
 ![Update MISP from the diagnostic tool in the UI](figures/update_diagnostic.png)
 
@@ -42,22 +42,22 @@ OR
 sudo -H -u www-data git pull origin 2.4
 ~~~~
 
-Once we have the latest MISP update, we can start updating the python libraries.
+Once you have the latest MISP update, you can start updating the Python libraries.
 
 ### Updating the python dependencies
 
-MISP is provided with a lot of submodules used to ensure all the additional functionalities work as expected. Thus it is important to keep those dependencies up-to-date.
+MISP includes several submodules that support additional functionality, so it is important to keep those dependencies up to date.
 ~~~~bash
 sudo -H -u www-data git submodule update --init --recursive
 ~~~~
 
 #### Updating python dependencies
 
-It is possible to check the status of all the python libraries required by MISP, using again the diagnostic tool.
+You can check the status of all Python libraries required by MISP by using the diagnostic tool again.
 
 ![Python libraries status](figures/python_diagnostic.png)
 
-If something is going wrong, updating the corresponding library will make the diagnostic happy.
+If something is wrong, updating the corresponding library should resolve the diagnostic warning.
 ~~~~bash
 # Update PyMISP
 cd /var/www/MISP/PyMISP
@@ -68,7 +68,7 @@ sudo -H -u www-data /var/www/MISP/venv/bin/pip install -U .
 sudo -H -u www-data /var/www/MISP/venv/bin/pip install -U lief
 # python-magic
 sudo -H -u www-data /var/www/MISP/venv/bin/pip install -U python-magic
-# pydeep - WARNING: It requires libfuzzy-dev 
+# pydeep - WARNING: It requires libfuzzy-dev
 sudo -H -u www-data /var/www/MISP/venv/bin/pip install -U pydeep
 
 # Update the STIX dependencies (PICK THE ONE.S YOU NEED TO UPDATE)

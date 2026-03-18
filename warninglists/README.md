@@ -1,29 +1,29 @@
 <!-- toc -->
-# MISP warninglists
-MISP warninglists are lists of well-known indicators that can be associated to potential false positives, errors or mistakes.
-There is a Python module available to work with warninglists in a Pythonic way called [PyMISPWarningLists](https://github.com/MISP/PyMISPWarningLists).
-[MISP warninglists GitHub Repo](https://github.com/MISP/misp-warninglists)
+# MISP Warning Lists
+MISP warning lists contain well-known indicators that may correspond to false positives, errors, or mistakes.
+There is also a Python module for working with warning lists in a Pythonic way: [PyMISPWarningLists](https://github.com/MISP/PyMISPWarningLists).
+[MISP Warning Lists GitHub Repository](https://github.com/MISP/misp-warninglists)
 
-## MISP warning lists introduction: The dilemma of false-positive
+## Warning Lists and False Positives
 
-- False-positives are a common issue in threat intelligence sharing.
-
-- It’s often a contextual issue:
-   - False-positives might be different per community of users sharing
-information.
-   - Organizations might have their own view on false-positives.
+False positives are a common issue in threat intelligence sharing.
+They are often contextual:
+- What counts as a false positive may differ from one sharing community to another.
+- Organizations may also have their own view of what should be treated as a false positive.
 
 ## Usage
-By default MISP will only trigger hits for warninglists if the attribute IDS flag is set. This behaviour can be changed by setting the MISP config parameter MISP.warning_for_all to true.
+By default, MISP triggers warning list hits only when the attribute IDS flag is set.
+You can change this behavior by setting the `MISP.warning_for_all` configuration parameter to `true`.
 
 When an attribute matches a warninglist entry, an info/warning box is displayed at the event and attribute level, as can be seen in the screenshot below.
 ![Screenshot of event with one attribute that has warning list hits](./figures/warninglist-warnings.png)
 
-Individual warninglists can be enabled or disabled at instance level using the warninglists index page. Examples of default warning lists are known public DNS resolvers, multicast IP addresses, hashes for empty values, rfc1918, TLDs or known google domains.
+Individual warning lists can be enabled or disabled at the instance level from the warning lists index page.
+Examples of default warning lists include known public DNS resolvers, multicast IP addresses, hashes for empty values, RFC1918 ranges, TLDs, and known Google domains.
 ![Screenshot of the warninglists index page](./figures/MISPwarninglist.png)
 
-The warning lists can be expanded or added in JSON locally or via
-pull requests (https://github.com/MISP/misp-warninglists). Warning lists can also be used for critical or core infrastructure or personally identifiable information.
+Warning lists can be extended locally in JSON or contributed through pull requests to https://github.com/MISP/misp-warninglists.
+They can also be used for critical infrastructure, core infrastructure, or personally identifiable information.
 
 ### Warninglists and data export
 The enforceWarninglist parameter of MISP restSearch can be used to exclude attributes that have a warninglist hit from the export. For more information on the MISP API, please refer to the [Automation and MISP API chapter](../sharing/).
@@ -40,10 +40,11 @@ Alternatively, it is also possible to trigger an update using a CLI command.
 MISP/app/Console/cake Admin updateWarningLists
 ~~~
 
-If you are updating an existing warninglist, make sure you incremented the version number before triggering the update on the MISP. You can also contribute to the existing warninglists by forking [MISP warninglists GitHub Repo](https://github.com/MISP/misp-warninglists), making changes and then creating a pull request.
+If you are updating an existing warning list, make sure you increment the version number before triggering the update in MISP.
+You can also contribute to the existing warning lists by forking the [MISP Warning Lists GitHub Repository](https://github.com/MISP/misp-warninglists), making your changes, and then opening a pull request.
 ### Creating a custom warninglist
 1. Create a new directory for your warninglist in /var/www/MISP/app/files/warninglists/lists.
 2. Add a file called list.json to the newly created directory and add the content you want. You can use any of the existing warning lists in https://github.com/MISP/misp-warninglists as reference.
 3. Trigger an update of the warning lists on the instance to load in your new warning list.
 
-Example use cases are a list of domain names owned by you or your organisation or employee email addresses.
+Example use cases include a list of domain names owned by your organization or a list of employee email addresses.

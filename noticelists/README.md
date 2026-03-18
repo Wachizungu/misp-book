@@ -1,7 +1,7 @@
 <!-- toc -->
-# MISP noticelist
+# MISP Notice Lists
 
-Notice lists to inform MISP users of the legal, privacy, policy or even technical implications of using specific attributes, categories or objects.
-[MISP noticelist GitHub Repo](https://github.com/MISP/misp-noticelist)
+Notice lists inform MISP users about the legal, privacy, policy, or technical implications of using specific attributes, categories, or objects.
+[MISP Notice List GitHub Repository](https://github.com/MISP/misp-noticelist)
 
-MISP Noticelists are a simple JSON description to trigger warning notifications to make the user more aware of eventual implications of her actions.
+MISP notice lists use a simple JSON description to trigger informational warnings and make users more aware of the possible implications of their actions.

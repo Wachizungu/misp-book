@@ -1,9 +1,9 @@
-Install notes
-=============
+# Install Notes
 
-:warning: Make sure to be in the *misp-book* repository directory for the *npm magic*.<br />
 
-Reason for concern:
+:warning: Make sure you are in the *misp-book* repository directory before running the *npm magic*.<br />
+
+Example output:
 ```
 npm WARN deprecated gulp-header@1.8.12: Removed event-stream from gulp-header
 npm WARN deprecated har-validator@5.1.5: this library is no longer supported
@@ -11,7 +11,7 @@ npm WARN deprecated har-validator@2.0.6: this library is no longer supported
 npm WARN deprecated cryptiles@2.0.5: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
 npm WARN deprecated boom@2.10.1: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
 npm WARN deprecated sntp@1.0.9: This module moved to @hapi/sntp. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
-npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+npm WARN deprecated uuid@3.4.0: Please upgrade to version 7 or higher. Older versions may use Math.random() in certain circumstances, which is known to be problematic. See https://v8.dev/blog/math-random for details.
 npm WARN deprecated tough-cookie@2.2.2: ReDoS vulnerability parsing Set-Cookie https://nodesecurity.io/advisories/130
 npm WARN deprecated node-uuid@1.4.8: Use uuid module instead
 npm WARN deprecated hoek@2.16.3: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
@@ -95,11 +95,11 @@ The following plugins are installed and this is how they impact the build.
   With this plugin you can include GitHub Gists](https://gist.github.com)
   ```
   {% gist id="https://gist.github.com/SteveClement/1ba901612a97d63938ed5cf32c2100ee" %}{% endgist %}
-  
+
   {% gist id="SteveClement/1ba901612a97d63938ed" %}{% endgist %}
-  
+
   {% gist id="SteveClement/1ba901612a97d63938ed",file="README.md" %}{% endgist %}
-  
+
   {% gist id="SteveClement/1ba901612a97d63938ed",hideFooter=true %}{% endgist %}
   ```
 
@@ -126,8 +126,8 @@ If you want to generate the PDF output (you need to have Calibre installed):
 
 ```bash
 $ time honkit pdf
-info: 13 plugins are installed 
-info: 13 explicitly listed 
+info: 13 plugins are installed
+info: 13 explicitly listed
 info: plugin "atoc" is loaded
 info: plugin "github" is loaded
 info: plugin "codesnippet" is loaded
@@ -141,14 +141,14 @@ info: plugin "search" is loaded
 info: plugin "lunr" is loaded
 info: plugin "fontsettings" is loaded
 info: plugin "theme-default" is loaded
-info: found 37 pages 
-info: found 278 asset files 
-warn: "options" property is deprecated, use config.get(key) instead 
-warn: "this.generator" property is deprecated, use "this.output.name" instead 
-warn: "navigation" property is deprecated 
-warn: "book" property is deprecated, use "this" directly instead 
-info: >> generation finished with success in 156.1s ! 
-info: >> 1 file(s) generated 
+info: found 37 pages
+info: found 278 asset files
+warn: "options" property is deprecated, use config.get(key) instead
+warn: "this.generator" property is deprecated, use "this.output.name" instead
+warn: "navigation" property is deprecated
+warn: "book" property is deprecated, use "this" directly instead
+info: >> generation finished with success in 156.1s !
+info: >> 1 file(s) generated
 npx honkit pdf  115.55s user 2.26s system 74% cpu 2:37.29 total
 ```
 
@@ -166,8 +166,8 @@ Live reload server started on port: 35729
 Press CTRL+C to quit ...
 
 Starting server ...
-info: 14 plugins are installed 
-info: 14 explicitly listed 
+info: 14 plugins are installed
+info: 14 explicitly listed
 info: plugin "atoc" is loaded
 info: plugin "github" is loaded
 info: plugin "codesnippet" is loaded
@@ -182,14 +182,14 @@ info: plugin "search" is loaded
 info: plugin "lunr" is loaded
 info: plugin "fontsettings" is loaded
 info: plugin "theme-default" is loaded
-info: found 37 pages 
-info: found 277 asset files 
-warn: "options" property is deprecated, use config.get(key) instead 
-warn: "this.generator" property is deprecated, use "this.output.name" instead 
-warn: "navigation" property is deprecated 
-warn: "book" property is deprecated, use "this" directly instead 
+info: found 37 pages
+info: found 277 asset files
+warn: "options" property is deprecated, use config.get(key) instead
+warn: "this.generator" property is deprecated, use "this.output.name" instead
+warn: "navigation" property is deprecated
+warn: "book" property is deprecated, use "this" directly instead
 
-info: >> generation finished with success in 103.7s ! 
+info: >> generation finished with success in 103.7s !
 Serving book on http://localhost:4000
 ^C
 npx honkit serve  118.09s user 1.59s system 109% cpu 1:49.14 total
