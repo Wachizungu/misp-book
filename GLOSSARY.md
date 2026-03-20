@@ -1,7 +1,7 @@
 ## MISP Glossary
-This glossary is meant as a quick lookup document in case of any need of clarification of any threat sharing, threat-intel lingo.
-Be careful when adding terms to the glossary. Adding a generic term like: *MISP* will prevent terms like *MISP noticelist* to be addded. As a matter of definition please use the singular for any terms.
-In case you use any CCBYSA licensed content, or other pieces that are subject to licensing, make sure to add it as a by-line at the end of the mention.
+This glossary is intended as a quick reference for clarifying threat-sharing and threat-intelligence terminology.
+Be careful when adding terms to the glossary. Adding a generic term such as *MISP* will prevent more specific terms such as *MISP noticelist* from being added. As a general rule, please use the singular form for each term.
+If you use any CC BY-SA licensed content, or any other material that is subject to licensing, make sure to add the appropriate attribution at the end of the entry.
 
 ## API
 MISP makes extensive use of its RESTful API (Application programming interface) both internally and provides an external API for automation, synchronisation or any other tasks requiring a machine to machine interface.
@@ -17,7 +17,7 @@ Sharing groups in MISP are a more granular way to create re-usable distribution 
 
 ## Site admin
 As an admin (not to be confused with Org Admin), you can set up new accounts for users, edit user profiles, delete them, or just have a look at all the viewers' profiles.
-Site admins have access to every administrator feature for all the data located on the system including global features such as the creation and modification of user roles and instance links. You will also see all other organisations connected or setup in the instance. The site admin can be considered as a super-user of a MISP instance.
+Site admins have access to every administrator feature for all the data located on the system including global features such as the creation and modification of user roles and instance links. You will also see all other organizations connected to or set up in the instance. The site admin can be considered as a super-user of a MISP instance.
 
 ## Indicators
 Indicators contain a pattern that can be used to detect suspicious or malicious cyber activity.

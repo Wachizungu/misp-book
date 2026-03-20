@@ -6,8 +6,9 @@ Please read the following [CakePHP documentation about i18n & l10n](https://book
 
 ## Add one .md per translation effort
 
-Please add a file à la: ja_JP.md (Japanese_Japan) or it_CH.md (Italian_Switzerland), in which you briefly describe what the current status of your translation effort is and what has been translated and which parts might be gotchas.
-This would also be a good place to quickly explain what your language is about, like whether most technical terms are a translation from the original, an adaptation from the English word or perhaps you just mostly use English terms.
+Please add one Markdown file per translation effort, such as `ja_JP.md` (Japanese_Japan) or `it_CH.md` (Italian_Switzerland).
+In that file, briefly describe the current status of the translation, what has already been translated, and any sections that may be tricky.
+It is also a good place to explain how technical terms are handled in your language, for example whether they are translated directly, adapted from English, or usually kept in English.
 
 ## Style
 
@@ -27,7 +28,9 @@ You want to have ultimate flexibility and that line should look more like this:
 <p><?php echo __('Are you sure you want to delete Proposal #{$id}?');?></p>
 ```
 
-In the above example we use an alternative notation of the format string in PHP. Using the above, the generated po-template file ([default.pot](https://github.com/MISP/MISP/blob/2.4/app/Locale/default.pot)) will have the name of the to-be-translated variable in the "msgid" part of the file. Which is easier to read then a non descriptive %s and allows the translator to have context on how the phrase is used in MISP.
+In the above example, we use an alternative notation for the PHP format string.
+With this approach, the generated po-template file ([default.pot](https://github.com/MISP/MISP/blob/2.4/app/Locale/default.pot)) includes the name of the variable to be translated in the `msgid` entry.
+That is easier to read than a non-descriptive `%s` and gives the translator more context about how the phrase is used in MISP.
 
 In case you have HTML-Tags, move them out of the sentence, out of the php code if possible:
 ```
@@ -42,9 +45,9 @@ In case you have HTML-Tags, move them out of the sentence, out of the php code i
 
 ## Issues
 
-Some times it might be impossible to translate some phrases.
-Or you notice a certain bad formatting, or segmentation of sentences.
-In that case, please either open an [Issue on Github](https://github.com/MISP/MISP/issues)
+Sometimes it may be impossible to translate certain phrases.
+You might also notice bad formatting or awkward sentence segmentation.
+In that case, please open an [issue on GitHub](https://github.com/MISP/MISP/issues).
 
 ## Quirks
 

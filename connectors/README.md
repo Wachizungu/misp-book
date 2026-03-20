@@ -1,8 +1,8 @@
 # External Connectors
 
-The <b> MISP to Microsoft Graph Security Script </b> enables you to connect your custom threat indicators or Indicators of Comprosmise (IoCs) and make these available in the following Microsoft products. 
+The **MISP to Microsoft Graph Security Script** lets you export custom threat indicators, or indicators of compromise (IoCs), from MISP to the following Microsoft products.
 
-## Azure Sentinel 
+## Azure Sentinel
 
 [Azure Sentinel](https://azure.microsoft.com/en-us/services/azure-sentinel/)
 
@@ -10,24 +10,25 @@ The <b> MISP to Microsoft Graph Security Script </b> enables you to connect your
 
 [Microsoft Defender ATP](https://www.microsoft.com/en-us/microsoft-365/windows/microsoft-defender-atp/)
 
-# MISP to Microsoft Graph Security Script
-The script provides clients with MISP instances to migrate threat indicators to the [Microsoft Graph Security API](https://aka.ms/graphsecuritydocs). 
+## MISP to Microsoft Graph Security Script
 
-For more information on Microsoft Graph Security API visit [Microsoft Graph Security API](https://aka.ms/graphsecuritydocs). <br/>
-For more information on Microsoft Graph visit [Microsoft Graph](https://developer.microsoft.com/en-us/graph).
+This script enables MISP users to migrate threat indicators to the [Microsoft Graph Security API](https://aka.ms/graphsecuritydocs).
+For more information, see the [Microsoft Graph Security API](https://aka.ms/graphsecuritydocs) and [Microsoft Graph](https://developer.microsoft.com/en-us/graph) documentation.
 
 ## Prerequisites
+
 Before installing the sample:
-* Install Python 3.x version from https://www.python.org/. 
-* To register your application for access to Microsoft Graph, you'll need either a [Microsoft account](https://www.outlook.com/) or an [Office 365 for business account](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account). If you don't have one of these, you can create a Microsoft account for free at [outlook.com](https://www.outlook.com/). 
+* Install Python 3.x from https://www.python.org/.
+* To register your application for access to Microsoft Graph, you need either a [Microsoft account](https://www.outlook.com/) or an [Office 365 for business account](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account). If you do not already have one, you can create a Microsoft account for free at [outlook.com](https://www.outlook.com/).
 
 ## Getting Started
-After the prerequisites are installed or met, perform the following steps to use these scripts:
+
+After you have completed the prerequisites, follow these steps to use the scripts:
 
 1. Download or clone [this repository](https://github.com/microsoftgraph/security-api-solutions/tree/master/Samples/MISP).
-1. Go to directory `security-api-solutions/Samples/MISP`
-1. Install dependencies.  In the command line, run `pip3 install requests requests-futures pymisp` 
-1. To run script, go to the root directory of misp-graph-script and enter `PYTHONHASHSEED=0 python3 script.py` in the command line. 
+2. Go to the `security-api-solutions/Samples/MISP` directory.
+3. Install the dependencies by running `pip3 install requests requests-futures pymisp`.
+4. To run the script, go to the root directory of misp-graph-script and run `PYTHONHASHSEED=0 python3 script.py`.
 
 ## App Registration
 To configure the sample, you'll need to register a new application in the Microsoft [Application Registration Portal](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps).
@@ -46,7 +47,7 @@ Follow these steps to register a new application:
 
 1. Under **Application Permissions**, add the permissions/scopes required for the sample. This sample requires **ThreatIndicators.ReadWrite.OwnedBy**.
     >Note: See the [Microsoft Graph permissions reference](https://developer.microsoft.com/en-us/graph/docs/concepts/permissions_reference) for more information about Graph's permission model.
-    
+
 1. Modify the RequestManager.py file to comment out line 121-124. (This allows the script to run without failing due to line 123 being divided by `avg_speed` incase it starts as `0`.
 
 1. Modify the script.py to add in `config.misp_verifycert` at line 13. Ensure it looks like below.
@@ -146,7 +147,7 @@ Possible **action** values are: `alert`, `allow`, `block`.
 `passiveOnly = False` (This is default).
 
 ### Days to Expire
-This property is used to specify the amount of days the records will expire in Microsoft Graph Security API. The default value for days to expire is 30.  
+This property is used to specify the amount of days the records will expire in Microsoft Graph Security API. The default value for days to expire is 30.
 
 `days_to_expire = 5`
 
@@ -157,7 +158,7 @@ Configure a sync user.
 `misp_key = '<misp key>'`
 
 ### Verify Cert
-This gives you the option to choose if python should validate the certificate of the misp instance. (This allows ease within testing environments) 
+This gives you the option to choose if python should validate the certificate of the misp instance. (This allows ease within testing environments)
 
 `misp_verifycert = False` IT IS RECOMMENDED TO USE A VALID SSL CERT IN PRODUCTION AND CHANGE THIS TO TRUE
 

@@ -1,20 +1,20 @@
-## Get your own MISP instance
+## Get Your Own MISP Instance
 
-The intention of this chapter is to support you in getting your own MISP instance up and running.
+The goal of this chapter is to help you get your own MISP instance up and running.
 
 
 ### MISP Virtual Machine
 
-CIRCL maintains the image of a recent MISP virtual machine online. This VM is generated after every commit to the main MISP repository on Github.
+CIRCL maintains an up-to-date MISP virtual machine image online. This VM is generated after every commit to the main MISP repository on GitHub.
 
-This is a very easy out of the box solution, optimized for product evaluation and to support trainings held by CIRCL staff.
+It is an easy out-of-the-box option that is well suited to product evaluation and to training sessions run by CIRCL staff.
 
 
 #### MISP VM Download
 
-The best place to get the latest version of the MISP virtual machine, as well as all the available training materials is the [MISP training materials page] [1] on the CIRCL website.
+The best place to get the latest MISP virtual machine image, along with the available training materials, is the [MISP training materials page] [1] on the CIRCL website.
 
-If you do not remember the direct link to the MISP training materials here are the very easy to remember steps you have to follow to reach the right place:
+If you do not remember the direct link, follow these steps to find it:
 
 1. Access the [CIRCL homepage] [2]
 2. Navigate to the [Training area] [3]
@@ -30,9 +30,9 @@ In VirtualBox use the "Import Appliance..." functionality to import the virtual 
 
 ![Import Appliance...](figures/importApp.png)
 
-The instructions in this manual covers VirtualBox only. If you prefer another virtualization solution like VMWare you can find some quick instruction on the [MISP training materials page] [1].
+The instructions in this manual cover VirtualBox only. If you prefer another virtualization solution, such as VMware, you can find brief instructions on the [MISP training materials page] [1].
 
-ESXi Servers have been tested too. Should work without problem but some manual changing of the ATA-Bus is needed.
+ESXi servers have also been tested. They should work, but you may need to adjust the ATA bus manually.
 
 
 #### MISP VM Credentials
@@ -44,7 +44,7 @@ You should have two interfaces on your VirtualBox configuration (NAT and host-on
 Depending on your setup (for example accessing the VM from another host), you might want to change the base URL in MISP server settings. This can be done from the command line:
 
     sudo -u www-data /var/www/MISP/app/Console/cake Baseurl [baseurl]
-    
+
 You can confirm the baseurl is updated correctly by checking the config.php file:
 
     grep baseurl /var/www/MISP/app/Config/config.php
@@ -62,7 +62,7 @@ MISP credentials:
 
 #### Networking on the VM
 
-Virtualbox has a neat feature to forward ports from your Host machine to the Guest VM.
+VirtualBox includes a convenient feature for forwarding ports from your host machine to the guest VM.
 We forward the following ports:
 
 * **ssh** Forward from 2222 on Host -> 22 on guest
@@ -72,9 +72,9 @@ We forward the following ports:
 * **8888** Viper Web UI - 8888 on Host -> 8888 on guest
 * **1666** misp-modules used to poll the misp-modules API - 1666 on Host -> 6666 on guest
 
-If the port is already used on your host, virtualbox will still boot and all the other ports will work.
+If a port is already in use on your host, VirtualBox will still boot and the other forwarded ports will continue to work.
 
-To change the port forwarding select the running VM in the UI and click on `Settings` -> `Network` -> `Advanced` -> `Port forwarding`
+To change the port forwarding, select the running VM in the UI and click `Settings` -> `Network` -> `Advanced` -> `Port forwarding`.
 
 ![Overview of Network settings](figures/vbox-settings-forwarding.png)
 

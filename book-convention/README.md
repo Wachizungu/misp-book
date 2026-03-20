@@ -19,10 +19,11 @@ description: Convention Used in MISP-Book
 The language in this book is American English.
 All the screenshots and examples are in English.
 
-## CoC
+## Code of Conduct
 
-The same code of conduct applies to this book as for the main MISP project.
-As a book can some times be considered the inadvertent soul of a piece of software, please take good care and consideration of our `Code of Conduct`. The CoC [can be read here](https://github.com/MISP/MISP/blob/2.4/code_of_conduct.md).
+The same code of conduct applies to this book as to the main MISP project.
+Because documentation often reflects the spirit of a software project, please treat the book with the same care and consideration.
+You can read the `Code of Conduct` [here](https://github.com/MISP/MISP/blob/2.4/code_of_conduct.md).
 
 ## Example install
 
@@ -52,8 +53,8 @@ The following two organisations are regularly used as example:
 * Setec Astronomy with UUID `58d38339-7b24-4386-b4b4-4c0f950d210f`
 * Acme Finance with UUID `58d38326-eda8-443a-9fa8-4e12950d210f`
 
-Starting from MISP 2.4.71, the example organisations with the above mentioned UUID are **blocklisted** to avoid  
-large distribution of sample events while testing a MISP instance. If you want to test your distribution, the  
+Starting from MISP 2.4.71, the example organisations with the above mentioned UUID are **blocklisted** to avoid
+large distribution of sample events while testing a MISP instance. If you want to test your distribution, the
 sample organisation blocklisting can be removed in `Administration`/`Manage Org blocklists`.
 
 ## Example IOCs

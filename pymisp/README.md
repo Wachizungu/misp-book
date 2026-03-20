@@ -1,10 +1,10 @@
-## PyMISP - Python Library to access MISP
+## PyMISP - Python Library to Access MISP
 
-PyMISP is a Python library to access MISP platforms via their REST API.
+PyMISP is a Python library for accessing MISP platforms through their REST API.
 
-PyMISP allows you to fetch events, add or update events/attributes, add or update samples or search for attributes.
+PyMISP lets you fetch events, add or update events and attributes, add or update samples, and search for attributes.
 
-Note that you need to have Auth Key access in your MISP instance to use PyMISP
+You need Auth Key access on your MISP instance to use PyMISP.
 
 ### Capabilities
 
@@ -19,11 +19,11 @@ Note that you need to have Auth Key access in your MISP instance to use PyMISP
 * Full text search and search by attributes
 * Get STIX event
 * Export statistics
-And even more, just look at the api.py file
+And more. See `api.py` for the full list.
 
 ### Installation
 
-You can install PyMISP by either using pip or by getting the last version from the [GitHub repository](https://github.com/MISP/PyMISP)
+You can install PyMISP either with pip or by retrieving the latest version from the [GitHub repository](https://github.com/MISP/PyMISP).
 
 #### Install from pip
 ~~~~
@@ -52,19 +52,19 @@ or on your profile
 https://<misp url>/users/view/me
 ~~~~
 
-If you did not install using the repository, you can still fetch it to get examples to work on:
+If you did not install from the repository, you can still clone it to access the examples:
 ~~~~
 git clone https://github.com/MISP/PyMISP.git
 ~~~~
 
-In order to use these, you need to create a file named keys.py in the examples folder and edit it to put the url of your MISP instance and your automation key.
+To use these examples, create a file named `keys.py` in the `examples` folder and add the URL of your MISP instance together with your automation key.
 ~~~~
 cd examples
 cp keys.py.sample keys.py
 vim keys.py
 ~~~~
 
-Once you are done with it, you are ready to start.
+Once you have done that, you are ready to start.
 
 This is how **keys.py** looks:
 
@@ -72,8 +72,8 @@ This is how **keys.py** looks:
 
 ### Using PyMISP
 
-To have a better understanding of how to use PyMISP, we will have a look at one of the existing examples: add\_named\_attribute.py
-This script allow us to add an attribute to an existing event while knowing only its type (the category is determined by default).
+To better understand how to use PyMISP, let us look at one of the existing examples: `add_named_attribute.py`.
+This script allows us to add an attribute to an existing event while knowing only its type, because the category is determined automatically.
 ~~~~python
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
@@ -121,7 +121,7 @@ Thanks to the previously created function, we create a PyMISP object.
 ~~~~
 In order to add the new argument, we first need to fetch the event in the MISP database using the [get\_event](https://github.com/CIRCL/PyMISP/blob/master/pymisp/api.py#L223) function which only need the event\_id. Then only once we have it, we can call the function [add\_named\_attribute](https://github.com/CIRCL/PyMISP/blob/master/pymisp/api.py#L372) that will add the argument.
 ~~~~python
-	print(event)
+    print(event)
 ~~~~
 Finally the new event is printed, so we can check that the attribute was correctly added, and that a category was attached to it automatically.
 

@@ -1,8 +1,8 @@
-# MISP user personas
+# MISP User Personas
 
-These personas are fictitious but are concrete representations of the people using MISP. 
-We can use these personas to keep in mind who we are working for, what are their needs, and what MISP should do for them.
-These personas come from OSINT on current MISP users (Gitter chats, GitHub issues, LinkedIn) and other sources of information about cybersecurity.
+These personas are fictional, but they are based on concrete representations of the people who use MISP.
+They help us keep in mind who we are building for, what their needs are, and what MISP should help them accomplish.
+These personas are based on OSINT about current MISP users, including Gitter chats, GitHub issues, LinkedIn, and other cybersecurity sources.
 
 ## Primary personas
 Farrah and Adam represent the users that are the most important to us.
@@ -10,18 +10,18 @@ Farrah and Adam represent the users that are the most important to us.
 ### Farrah
 _**The Threat Hunter**_
 
-Farrah works as a threat intelligence for a security service provider in Malaysia that offers a range of cybersecurity solutions. 
+Farrah works in threat intelligence for a security service provider in Malaysia that offers a range of cybersecurity solutions.
 He leads a threat intelligence team made up of experienced intelligence analysts who are former military/government employees and contractors.
 
-Farrah uses MISP to analyze malware, gather information about specific adversary groups, and discover emerging threats. 
+Farrah uses MISP to analyze malware, gather information about specific adversary groups, and discover emerging threats.
 He also uses MISP for data normalization (consolidating data across different source formats), de-duplication (removal of duplicate information), and enrichment (removal of false positives, scoring of indicators, and the addition of context).
 
-_"In order to effectively address threats, you must maintain a team focused on monitoring, generating and triaging alerts"_
+_"To address threats effectively, you must maintain a team focused on monitoring, generating, and triaging alerts."_
 
 #### Role
 Lead Threat Intelligence Analyst
 
-#### His primary goals are to: 
+#### His primary goals are to:
 - Hunt down threats, analyze malware, manage vulnerabilities and prevent attacks against ICT infrastructures, organizations, or people.
 - Improve  security posture through the aggregation,  correlation, and analysis of threat data from multiple sources
 - Investigate and understand adversarial capabilities, infrastructure & TTPs.
@@ -39,12 +39,12 @@ Lead Threat Intelligence Analyst
 - Aggregate, curate, and validate indicators from various feeds, then feed the data into detection and analysis tools like NIDs, IDS, and SIEMs
 - Query vulnerability scan results in MISP, automatically create/classify events on matching results, then create blocklists by excluding attributes that exist on warning lists.
 - Collaborate with others in a sharing community using Proposals (send and receive feedback), Extended Events (add additional information to other’s analytics), and Event Reports (supply resolution steps and recommendations).
-- Share and receive reports of a specific threat, false positives, or post-mortem     analysis of an incident from sharing groups. 
+- Share and receive reports of a specific threat, false positives, or post-mortem     analysis of an incident from sharing groups.
 
 #### His objectives are to:
 - Join relevant sharing communities, produce and publish indicators and share information across sectors to avoid hybrid threats.
 - Use IoCs from feeds to identify vulnerabilities, compromised assets, data leaks and to verify the results of a malware scan.
-- Triage threat intel, prioritize vulnerabilities, and customize risk feeds to ignore or downgrade irrelevant alerts in order to avoid alert fatigue.     
+- Triage threat intel, prioritize vulnerabilities, and customize risk feeds to ignore or downgrade irrelevant alerts in order to avoid alert fatigue.
 - Generate and share alerts to provide critical information to internal teams and external peers.
 - Share information about relevant vulnerabilities, coordinate with security vendors to get notifications, and community sharing of pentest results with other analysts.
 - Research the evolution of high-risk malware families, validate malware signatures and domain reputations.
@@ -56,8 +56,8 @@ Lead Threat Intelligence Analyst
 ### Adam
 _**The Remediator**_
 
-Adam is part of the Computer Security Incident Response Team (CSIRT) at a Belgian cybersecurity consulting firm. 
-His responsibilities involve incident response, incident coordination, threat intelligence, and vulnerability management. 
+Adam is part of the Computer Security Incident Response Team (CSIRT) at a Belgian cybersecurity consulting firm.
+His responsibilities involve incident response, incident coordination, threat intelligence, and vulnerability management.
 He monitors potential threats, investigates attacks, and works with other security personnel to reduce the impact and severity of an attack.
 
 Adam uses MISP to monitor incidents, provide early warnings/alerts about incidents, respond to incidents and provide incident analysis and situational awareness.
@@ -71,20 +71,20 @@ Incident Response
 
 - Uncover the effects of attacks, determine how to clean up its impact, and inform a response to an existing incident to mitigate its extent or impacts.
 - Develop and maintain strong processes for the most common incidents and threats, and create actionable results and remediation plans for internal stakeholders to proactively improve the security posture and maturity.
-- Accelerate incident investigations, management, and prioritization by looking for information on the who/what/why/when/how of an incident. 
+- Accelerate incident investigations, management, and prioritization by looking for information on the who/what/why/when/how of an incident.
 - Determine the scope of incidents and limit the potential damage.
 
 #### He uses MISP to:
 - Store incidents as a database of events, describe incidents through event classification (using taxonomies and galaxies) and use the API to deduce from all incidents the current operational status, risk posture, and threats to the cyber environment.
 - Join sharing groups and communities to share incident information with others and discuss information related to risks associated with incidents via Forums, comments to events, and contact a reporter.
-- Analyze observables/malware collected during an incident, determining whether they are IoCs or false positives using the correlation graph and expansion modules.     
-- Alert and send emails when events are created in the system or major changes occur in the events, serving as part of an early warning system.     
+- Analyze observables/malware collected during an incident, determining whether they are IoCs or false positives using the correlation graph and expansion modules.
+- Alert and send emails when events are created in the system or major changes occur in the events, serving as part of an early warning system.
 - Pull events via the API or export IOCs in formats for easy ingestion into other tools (such as SIEMs and IDS) and carrying out investigations by launching lookups against databases.
 - Collaborate and get feedback from team members and affected parties during incident response using Proposals.
-- Dismiss false positives (using warning lists) and enable alert prioritization. 
+- Dismiss false positives (using warning lists) and enable alert prioritization.
 - Aggregate and compare information from internal and external feeds to identify genuine threats.
 - Perform large-scale data/traffic analysis and correlation through lookups against SightingDB.
-- Share, receive, store and forward incidents and information identified during an incident investigation, enabling the MISP system to act as a forensic tool over time.     
+- Share, receive, store and forward incidents and information identified during an incident investigation, enabling the MISP system to act as a forensic tool over time.
 - Correlate and reference network forensic flows from different tools or network equipment
 - Speed up incident response via integration with TheHive.
 
@@ -140,7 +140,7 @@ Fraud analyst
 ### Henry
 _**The Enforcer**_
 
-Henry is a law enforcement officer living in Florida, USA. He works with the Digital Forensics and Incident Response (DFIR) team. 
+Henry is a law enforcement officer living in Florida, USA. He works with the Digital Forensics and Incident Response (DFIR) team.
 He is responsible for investigating digital security incidents, identifying digital assets targeted during attacks, and documenting all findings.
 
 He uses MISP to support or bootstrap his DFIR cases.
@@ -151,15 +151,15 @@ _"I worry about what I don’t know, not what I know"_
 Law Enforcement Officer
 
 #### His primary goals are to:
-- Find, gather and analyze digital evidence for criminal investigations. 
+- Find, gather and analyze digital evidence for criminal investigations.
 - Carry out data breach and malware investigations.
 
 #### He uses MISP to:
 - Propose changes to existing analyses or reports.
-- Correlate (1-to-1 value matches, fuzzy hashing, CIDR block matching) evidence against external/local attributes.     
+- Correlate (1-to-1 value matches, fuzzy hashing, CIDR block matching) evidence against external/local attributes.
 - Correlate and reference network forensic flows from different tools or network equipment using the community-id feature.
 - Export data in various formats to feed into and lookup in other security tools.
-- Join sharing groups and collaborate with other investigators. 
+- Join sharing groups and collaborate with other investigators.
 - Receive, gather, analyze and share intelligence on digital crimes.
 - Report digital evidence (in STIX) in a structured way for forensic use.
 - Collect evidence for forensic analysis from feeds, using shared indicators to carry out cybercriminal behavior investigations, attribution, and identifying the link to organized crime activities.
@@ -175,10 +175,10 @@ Law Enforcement Officer
 ### Jacob
 _**The Veteran**_
 
-Jacob is a cybersecurity consultant for organizations looking to secure their infrastructure. 
-He has founded a cybersecurity agency that provides threat intel and security consulting services to small and medium-sized businesses. 
+Jacob is a cybersecurity consultant for organizations looking to secure their infrastructure.
+He has founded a cybersecurity agency that provides threat intel and security consulting services to small and medium-sized businesses.
 
-Jacob uses MISP to investigate threats and find IOCs. 
+Jacob uses MISP to investigate threats and find IOCs.
 He works with many clients and typically wants to integrate MISP into existing client solutions.
 
 _"There’s a difference between threat data and threat intelligence"_
@@ -213,7 +213,7 @@ Cyber Security consultant
 ### Jay
 _**The Inquisitor**_
 
-Jay is a risk analyst for a large technology company in the USA. 
+Jay is a risk analyst for a large technology company in the USA.
 He is responsible for identifying and predicting risks, as well as forecasting the cost of certain attacks to the organization.
 
 Jay uses MISP data to learn about the broad threat landscape and analyze the likelihood of certain risks, so as to gain situational awareness.
@@ -269,7 +269,7 @@ Disinformation researcher and journalist
 
 #### Her objectives are to:
 - Distill essential information from a large piece of data, making it clear to the reader what really matters.
-- Integrate MISP with TheHive for enhanced disinformation investigation and reporting. 
+- Integrate MISP with TheHive for enhanced disinformation investigation and reporting.
 - Verify that an article (or image, video, etc) doesn’t contain disinformation and verify that a source (publisher, domain, etc) doesn’t distribute disinformation.
 - Extend MISP for disinformation, adding object types for incidents and narratives, and using [AMITT](https://www.misp-project.org/galaxy.html#_misinformation_pattern) for attack patterns.
 
@@ -279,10 +279,10 @@ Malcolm represents users that we care about but aren't so important to us.
 ### Malcolm
 _**The Data Expert**_
 
-Malcolm is a data scientist for a telecom operator in the USA. 
+Malcolm is a data scientist for a telecom operator in the USA.
 He assists the Security Operations Center with tasks related to anomaly detection, exploratory data analysis, data visualization, modeling, and optimization of security solutions.
 
-Malcolm uses data from MISP alongside natural language processing, predictive modeling, and other data science techniques to assess, prioritize, and even predict risk. 
+Malcolm uses data from MISP alongside natural language processing, predictive modeling, and other data science techniques to assess, prioritize, and even predict risk.
 He can process threat data to help with alert prioritization and data-driven decision making.
 
 _"It is a mistake to theorize before one has data. Insensibly, one begins to twist facts to suit theories, instead of theories to suit facts"_

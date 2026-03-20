@@ -1,69 +1,69 @@
-## Create an event based on a report
+## Create an Event Based on a Report
 
 > [warning] A specific permission is required to create an event.
 
-For this example, we will use a report found on [Bleeping Computer](http://www.bleepingcomputer.com/news/security/researcher-finds-the-karma-ransomware-being-distributed-via-pay-per-install-network/), so considered as OSINT.
+For this example, we will use a report published on [Bleeping Computer](http://www.bleepingcomputer.com/news/security/researcher-finds-the-karma-ransomware-being-distributed-via-pay-per-install-network/), which we will treat as OSINT.
 
 ![Report title](figures/report_title.png)
 
 ### Adding an event
 
-First of all, we need to create a new event. To do so, we click the "Add Event" option when on the Events list view.
+First, create a new event by clicking **Add Event** in the Events list view.
 
 ![Add Event Option](figures/menu_add_event.png)
 
-Then we get the add event form.
+This opens the add event form.
 
 ![Add Event form](figures/add_event_form.png)
 
-Let's fill it with the data we already have:
+Let's populate it with the information we already have:
 * Date: Here we will put the date of the report, so 2016-11-14
 * Distribution: Depending on the event, we might want it to be more or less spread across the MISP instances. For this one, since it is a public report, there is no reason to limit the diffusion so "All communities".
-* Threat Level: Self explainatory. Since the ransomware in the report is not using a huge exploit, we can use low, or undefined as we don't really know. we'll go for the latter since it can be edited. 
+* Threat Level: This is self-explanatory. Since the ransomware described in the report does not appear to use a major exploit, we can choose **Low** or **Undefined**. We will use **Undefined** because it can be refined later.
 * Analysis: Give the current stage of the analysis. Since the report is published, we can assume that the analysis is completed.
-* Event Info: The event's info is in fact the name or title of the event, so it seems legit to put the title of the report here as well. Since it is public information, we also prefix it with "OSINT".
+* Event Info: This field is effectively the event title, so it makes sense to use the report title here. Because the source is public, we also prefix it with `OSINT`.
 * GFI sandbox: Since we don't have any sample or anything here, we leave this alone.
 
 ![Add Event form filled](figures/add_event_form_filled.png)
 
-Then just press the blue "Add" button and here we have a brand new event. Empty.
+Click the blue **Add** button to create the event. You now have a brand-new, empty event.
 
-![EMPTY EVENT YAY](figures/event_metadata.png)  
+![EMPTY EVENT YAY](figures/event_metadata.png)
 (Displayed information can change depending on your role on the MISP instance)
 
 ### Adding Attributes
 
-Now it is time to populate this event. But before even adding IoC, we are going to add global information about the report itself: the link of the report and a short explanation or introduction. To do so, we need to click on the "Add Attribute" option in the side menu. This will show us this view:
+Now it is time to populate the event. Before adding IoCs, we will add general information about the report itself: the report link and a short introduction. Click **Add Attribute** in the side menu to open the following view:
 
 ![add attribute](figures/add_attribute.png)
 
-* First we are going to add the link of the report. Since it has been written by an other researcher, it will be considered as an "External analysis", we choose this category. 
-* Concerning the type, regarding the kind of data we are adding it is obvious that we will choose the "link" type.
+* First, add the link to the report. Because it was written by another researcher, we will treat it as **External analysis** and choose that category.
+* For the type, choose **link** because we are adding a URL.
 * The distribution field can be a little tricky. We can either choose one of the option that was already available at event level or "Inherit event". If we choose the latter, the attribute will be shared the same way as the event it is included in (here to "All communities"). On the other hand, if we choose manually a distribution for the attribute, the most restritive between event distribution and attribute distribution will be applied. That is to say: if both event and attribute distributions are the same, there will be no change (similar to "Inherit event"). However, if for instance the event distribution is "all communities" while the attribute is limited to "This community only", the event will indeed be distributed to all communities but without this particular attribute which will be limited to this community only. The same works the other way around, if the attribute can be distributed to "all communities" while the related event is limited to this community, the attribute being dependant of the event, it will be shared to this community only, basing its distribution on the event (most restrictive) one.
-* The value is simply the data we want to add, here it is the link of the report.
-* The contextual comment is a field that will not be used for correlation and is mainly there to add some complementary information on the attribute. Can be a port for an IP, or an indication of any type. Here there is no perticular information to add, except maybe tell that it is the source of the report, so let us put this information.
+* The value is the data we want to add, which in this case is the report URL.
+* The contextual comment is not used for correlation. It is mainly there to provide supporting information about the attribute, such as a port number for an IP address or some other qualifier. Here we can note that the link is the source report.
 * "for Intrusion Detection System" is used to set the IDS flag or not. If set, the attribute will be used as an IDS signature when exporting the NIDS data. In this case, we have no reason to check it.
-* The Batch Import is a useful option when we need to add several IoC of the same category/type which allow you to add them at once by separated by a line break between each line in the value field. However it is of no use here.
+* Batch Import is useful when you need to add several IoCs of the same category and type by separating each value with a line break. We do not need it here.
 
 ![add attribute filled](figures/add_attribute_filled.png)
 
-All fields are properly filled ? Then let's press the "submit" button, and Ta-dah !
+Once all fields are filled in, click **Submit**.
 
 ![attribute added YAY](figures/added_attribute.png)
 
-Now we can do a similar procedure to add an introduction to the report (that is to say the first paragraph of the report). We will simply change the type for text. But this time, we will access the add attribute form by clicking on the small + symbol next to the attribute table.
+We can now follow a similar process to add an introduction to the report, meaning the first paragraph of the article. This time, change the type to **text** and open the add attribute form by clicking the small **+** icon next to the attribute table.
 
 ![Noooo you found meeeeee](figures/hidden_add_attr.png)
 
-The same form as before will appear in a popup.
+The same form appears in a pop-up.
 
 ![add attribute popup](figures/add_attr_popup.png)
 
-Again, we fill it with the required data.
+Fill it in with the required data.
 
 ![add attribute popup](figures/filled_popup.png)
 
-Then we submit it by clicking on the blue button
+Then submit it by clicking the blue button.
 _Et voilà!_
 
 ![MAGIC](figures/popadded.png)
@@ -90,7 +90,7 @@ So we begin with the filename. No real change from before for this one, except t
 
 Then we can add the hashes in a similar way. We will had them both alone and combined with the filename. In order to do it quickly, we are going to use the freetext import tool, hidden there
 
-![freetext import step 1](figures/freeeeeimport.png) 
+![freetext import step 1](figures/freeeeeimport.png)
 
 It will open a popup with a text area field where we will paste our IoC, one per line. As said previously, we add both the hashes alone and with the filename.
 
@@ -100,11 +100,11 @@ Then when we press the submit button, we are redirected on this page to control 
 
 ![freetext import step 3](figures/freeresults.png)
 
-Here, MISP detected by itself what should be the category and type associated to our IoC and surprise! It matches our suppositions. Plus, it also put the IDS flag, so it is perfect. But before submitting, please double check to be sure all the values are correct and no information was lost (That can happen when the data are not formatted as expected by MISP). 
+Here, MISP detected by itself what should be the category and type associated to our IoC and surprise! It matches our suppositions. Plus, it also put the IDS flag, so it is perfect. But before submitting, please double check to be sure all the values are correct and no information was lost (That can happen when the data are not formatted as expected by MISP).
 
 If the results of MISP were not what we expected, we can still modify it, however MISP will only suggest suitable category/type regarding the format of your data. We can change for each attribute individually or all at the same time using the option on the bottom right of the form. The same principle also applies for the comments, individually or for all.
 
-![freetext import suggestions](figures/freesuggest.png)  
+![freetext import suggestions](figures/freesuggest.png)
 (Yes I have two cursors, MISP is magic!)
 
 We only have the network indicators left, and as said before, we will let MISP determined for us which type is the best for the data we have.
@@ -113,21 +113,21 @@ We only have the network indicators left, and as said before, we will let MISP d
 
 ![type recognition fail](figures/surprise.png)
 
-Oh well, that was unexpected. In fact, it is not that surprising regarding the format of the tor address that look more like a filename than like a url but it is still a problem, since we can't change the type nor the category to a more consistent one. This is indeed one of the limitation of freetext import. To solve this issue, we will use a simple trick: we will add a slash at the end of the tor address so it won't be confused for a filename. 
+Oh well, that was unexpected. In fact, it is not that surprising regarding the format of the tor address that look more like a filename than like a url but it is still a problem, since we can't change the type nor the category to a more consistent one. This is indeed one of the limitation of freetext import. To solve this issue, we will use a simple trick: we will add a slash at the end of the tor address so it won't be confused for a filename.
 
 ![freetext import network](figures/free_network2.png)
 
 ![type recognition fail](figures/nomoresurprise.png)
 
-Thanks to the added character, the first string is recognised as an url which is more consistent with the reality. The second also seems okay, so we can now submit both. 
+Thanks to the added character, the first string is recognised as an url which is more consistent with the reality. The second also seems okay, so we can now submit both.
 
 ### Batch Import
 
-The Freetext Import works properly only with a string of data without any spaces in one line. But if you have lines of text with spaces between values, like e.g. 
+The Freetext Import works properly only with a string of data without any spaces in one line. But if you have lines of text with spaces between values, like e.g.
 
 ![freetext_with_spaces1](figures/freetext_with_spaces1.png)
 
-you can still import them at once using the "Add Attribute" option. Click on _Add Attribute_, copy the data and paste it into the _Value_ box. Choose the right category and type. Now check both checkboxes _for Intrusion Detection System_ and _Batch Import_. The option _Batch Import_ will import your data line for line just like the _Freetext Import_ option without losing any information. Like this:      
+you can still import them at once using the "Add Attribute" option. Click on _Add Attribute_, copy the data and paste it into the _Value_ box. Choose the right category and type. Now check both checkboxes _for Intrusion Detection System_ and _Batch Import_. The option _Batch Import_ will import your data line for line just like the _Freetext Import_ option without losing any information. Like this:
 
 ![addattribute_freetext](figures/addattribute_freetext.png)
 
@@ -135,4 +135,4 @@ And that is all we can get for the main informations and IoC in this report. If 
 
 ### Modify the event
 
-If you want to modify your event from the home page, you can either double click on the event or click the edit symbol located in the column __Actions__ on the right side. You will be redirected to the editing mode of the selected event.    
+If you want to modify your event from the home page, you can either double click on the event or click the edit symbol located in the column __Actions__ on the right side. You will be redirected to the editing mode of the selected event.
